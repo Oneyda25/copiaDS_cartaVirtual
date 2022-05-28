@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}
+updateRegister
+{% endblock %}
+
+{% block estilos %}
+<style>
+  .abs-center {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .form {
+    width: 450px;
+  }
+</style>
+{% endblock %}
+
+{% block contenido %}
+<center>
+  <h1>Actualizar perfil empresa</h1>
+</center>
+<div class="container">
+  <div class="abs-center">
+    <form action="/editarRegistro/{{users.0}}" class="border p-3 form" method="POST" enctype="multipart/form-data">
+
+      <div class="form-group">
+        <label>Nombre empresa:</label>
+        <input type="text" class="form-control" placeholder="nombre" name="name" value="{{user.1}}">
+      </div>
+
+      <div class="form-group">
+        <label>Descripción:</label>
+        <input type="text" class="form-control" placeholder="descripción" name="description" value="{{description}}">
+      </div>
+
+      <div class="form-group">
+        <label for="">Imagen</label>
+        <input type="file" class="form-control" name="image">
+      </div>
+
+      <div class="form-group">
+        <label>Teléfono:</label>
+        <input type="number" class="form-control" placeholder="teléfono" name="phone" value="{{phone}}">
+      </div>
+
+      <div class="form-group">
+        <label>Dirección:</label>
+        <input type="text" class="form-control" placeholder="dirección" name="address" value="{{address}}">
+      </div>
+
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" class="form-control" placeholder="ejemplo@gmail.com" name="email" value="{{email}}">
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña:</label>
+        <input type="password" class="form-control" placeholder="contraseña" name="password" value="{{password}}">
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary">Actualizar</button>
+      </div>
+      <a href="/login/miCuenta">
+        <input type="button" class="btn btn-primary" value="Volver">
+      </a>
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
